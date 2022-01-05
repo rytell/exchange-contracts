@@ -27,15 +27,63 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: "0.5.16",
+        version: "0.5.16"
       },
-    ],
+      {
+        version: "0.6.2"
+      },
+      {
+        version: "0.6.6",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 1000
+          },
+          outputSelection: {
+            "*": {
+              "*": ["storageLayout"]
+            }
+          }
+        }
+      },
+      {
+        version: "0.7.0"
+      },
+      {
+        version: "0.7.6",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 1000
+          },
+          outputSelection: {
+            "*": {
+              "*": ["storageLayout"]
+            }
+          }
+        }
+      },
+      {
+        version: "0.8.0",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 1000
+          },
+          outputSelection: {
+            "*": {
+              "*": ["storageLayout"]
+            }
+          }
+        }
+      }
+    ]
   },
   networks: {
     localhost: {
       gasPrice: 470000000000,
       chainId: 43114,
-      url: "http://127.0.0.1:8545/ext/bc/C/rpc",
+      url: "http://127.0.0.1:8545/ext/bc/C/rpc"
     },
     hardhat: {
       gasPrice: 470000000000,
@@ -43,48 +91,44 @@ const config: HardhatUserConfig = {
       initialDate: "2020-10-10",
       forking: {
         url: "https://api.avax.network/ext/bc/C/rpc",
-        enabled: true,
+        enabled: true
       },
       accounts: {
         accountsBalance: "1000000000000000000000000000000",
-        count: 50,
-      },
+        count: 50
+      }
     },
     avash: {
       url: "http://localhost:9650/ext/bc/C/rpc",
       gasPrice: 470000000000,
       chainId: 43112,
       accounts: [
-        "0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027",
-      ],
+        "0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027"
+      ]
     },
     fuji: {
-      accounts: {
-        mnemonic,
-      },
       url: "https://api.avax-test.network/ext/bc/C/rpc",
-      gas: 8000000,
-      gasPrice: 225000000000,
-      timeout: 30000,
+      gasPrice: 220000000000,
       chainId: 43113,
+      accounts: { mnemonic }
     },
     mainnet: {
       url: "https://api.avax.network/ext/bc/C/rpc",
-      gasPrice: 220000000000,
+      gasPrice: 470000000000,
       chainId: 43114,
-      accounts: [],
-    },
+      accounts: []
+    }
   },
   contractSizer: {
     alphaSort: false,
     runOnCompile: true,
-    disambiguatePaths: false,
+    disambiguatePaths: false
   },
   gasReporter: {
     enabled: true,
     showTimeSpent: true,
-    gasPrice: 225,
-  },
+    gasPrice: 225
+  }
 };
 
 export default config;

@@ -4,6 +4,8 @@ import "./interfaces/IRytellFactory.sol";
 import "./RytellPair.sol";
 
 contract RytellFactory is IRytellFactory {
+    bytes32 public constant INIT_CODE_PAIR_HASH = keccak256(abi.encodePacked(type(RytellPair).creationCode));
+    
     address public feeTo;
     address public feeToSetter;
 
