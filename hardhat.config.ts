@@ -8,7 +8,7 @@ import "ts-node/register";
 
 import dotenv from "dotenv";
 dotenv.config();
-const mnemonic = process.env.MNEMONIC;
+const privateKey = process.env.PRIVATE_KEY || '';
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -110,13 +110,13 @@ const config: HardhatUserConfig = {
       url: "https://api.avax-test.network/ext/bc/C/rpc",
       gasPrice: 220000000000,
       chainId: 43113,
-      accounts: { mnemonic }
+      accounts: [ privateKey ]
     },
     mainnet: {
       url: "https://api.avax.network/ext/bc/C/rpc",
-      gasPrice: 470000000000,
+      gasPrice: 220000000000,
       chainId: 43114,
-      accounts: []
+      accounts: [ privateKey ]
     }
   },
   contractSizer: {

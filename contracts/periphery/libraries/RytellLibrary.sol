@@ -35,7 +35,7 @@ library RytellLibrary {
                         hex"ff",
                         factory,
                         keccak256(abi.encodePacked(token0, token1)),
-                        hex"40231f6b438bce0797c9ada29b718a87ea0a5cea3fe9a771abdd76bd41a3e545" // init code hash
+                        hex"7bd927802fdb527f309b93ddee94db449d2e8d06614fbd1115bb852fea55a227" // init code hash
                     )
                 )
             )
