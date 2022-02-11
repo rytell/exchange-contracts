@@ -6,7 +6,7 @@ This repo contains all of the smart contracts used to run [Rytell](rytell.io).
 
 Factory address: `0xe5e970FE3a90F314977a9Fd41e349486a9e8c4fe`
 
-Router address: `0xca743d2FaCfb6A51C2a551a059Cc7F7b1e87Ba89`
+Router address: `0xa333EEBa817519B7F9C8B074b19Af7b6F8076e71`
 
 ## Running
 
